@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Infinity_Scroll.Models.TestData>
+
+@{
+    ViewData["Title"] = "TestData";
+}
+
+<h1>TestData</h1>
+
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Field1)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/InfinitiySroll.js"></script>
+
+    <script>
+        var infinityScroll = new InfinitiySroll($("#myTable"), "/home/_TestData", { sortOrder: "ascending", searchString: "3" });
+    </script>
+}
