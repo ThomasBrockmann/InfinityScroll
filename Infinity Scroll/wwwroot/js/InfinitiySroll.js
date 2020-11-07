@@ -15,7 +15,7 @@
         })
             .done(function (result) {
                 if (result) {
-                    $(self.table).append(result);
+                    $("#" + self.table).append(result);
                     self.loading = false;
                 }
             })
@@ -32,7 +32,7 @@
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             //User is currently at the bottom of the page
             if (!self.loading) {
-                var itemCount = $('#myTable tr').length - 1;
+                var itemCount = $('#' + self.table + ' tr').length - 1;
                 self.AddTableLines(itemCount);
             }
         }

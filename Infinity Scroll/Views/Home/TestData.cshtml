@@ -6,7 +6,7 @@
 
 <h1>TestData</h1>
 
-<table id="myTable" class="table">
+<table id="anyTable" class="table">
     <thead>
         <tr>
             <th>
@@ -25,6 +25,6 @@
     <script src="~/js/InfinitiySroll.js"></script>
 
     <script>
-        var infinityScroll = new InfinitiySroll($("#myTable"), "/home/_TestData", { sortOrder: "ascending", searchString: "3" });
+        var infinityScroll = new InfinitiySroll("anyTable", "/home/_TestData", { sortOrder: "ascending", searchString: "3" });
     </script>
 }

@@ -44,9 +44,8 @@ namespace Infinity_Scroll.Controllers
                 testData.Add(new TestData() { Id = i, Field1 = "This is row " + i.ToString() });
             }
 
-            IEnumerable<TestData> query;
-
             // Sort and filter test data
+            IEnumerable<TestData> query;
             if (sortOrder.ToLower() == "descending")
             {
                 query = testData.OrderByDescending(m => m.Field1);
@@ -58,9 +57,9 @@ namespace Infinity_Scroll.Controllers
             if (!String.IsNullOrEmpty(searchString)) query = query.Where(m => m.Field1.Contains(searchString));
 
             // Extract a portion of data
-            query = query.Skip(firstItem).Take(BATCH_SIZE);
-
-            return PartialView(query.ToList());
+            var model = query.Skip(firstItem).Take(BATCH_SIZE).ToList();
+            if (model.Count() == 0) return StatusCode(204);  // 204 := "No Content"
+            return PartialView(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
