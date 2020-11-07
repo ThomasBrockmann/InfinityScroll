@@ -1,4 +1,10 @@
-﻿function InfinitiySroll(iTable, iAction, iParams) {
+﻿// *****************************************************************************************************************
+//                                      I n f i n i t y   S c r o l l                                             **
+//                                                                                                                **
+//                                   by Thomas Brockmann  mail@tbrockmann.de                                      **
+// *****************************************************************************************************************
+
+function InfinitiySroll(iTable, iAction, iParams) {
     this.table = iTable;        // Reference to the table where data should be added
     this.action = iAction;      // Name of the conrtoller action
     this.params = iParams;      // Additional parameters to pass to the controller
